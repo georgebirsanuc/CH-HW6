@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_problema1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
+    tools:context="com.example.c309660.cn_tema6.Problema1">
+
+    <TextView
+        android:text="Matricea din fisier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView"
+        android:textStyle="normal|bold"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginTop="26dp"
+        android:scrollbars="horizontal"
+        android:id="@+id/matriceFisierSimetrieTextView"
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/matriceFisierSimetrieTextView"
+        android:layout_alignLeft="@+id/matriceFisierSimetrieTextView"
+        android:layout_alignStart="@+id/matriceFisierSimetrieTextView"
+        android:layout_marginTop="31dp"
+        android:id="@+id/valoareProprieMatriceFisierTextView"
+        android:textSize="18sp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="Matricea generata random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vectorMatriceFisierTextView"
+        android:layout_alignLeft="@+id/vectorMatriceFisierTextView"
+        android:layout_alignStart="@+id/vectorMatriceFisierTextView"
+        android:layout_marginTop="33dp"
+        android:id="@+id/textView2"
+        android:textStyle="normal|bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginTop="28dp"
+        android:id="@+id/matriceRandomSimetrieTextView"
+        android:scrollbars="horizontal"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/valoareProprieMatriceRandomTextView"
+        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/matriceRandomSimetrieTextView"
+        android:layout_alignLeft="@+id/matriceRandomSimetrieTextView"
+        android:layout_alignStart="@+id/matriceRandomSimetrieTextView" />
+
+    <TextView
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/valoareProprieMatriceRandomTextView"
+        android:layout_alignLeft="@+id/valoareProprieMatriceRandomTextView"
+        android:layout_alignStart="@+id/valoareProprieMatriceRandomTextView"
+        android:layout_marginTop="30dp"
+        android:id="@+id/vectorMatriceRandomTextView"
+        android:background="@android:color/background_light" />
+
+    <TextView
+        android:layout_width="270dp"
+        android:layout_marginTop="23dp"
+        android:id="@+id/vectorMatriceFisierTextView"
+        android:layout_height="60dp"
+        android:background="@android:color/background_light"
+        android:layout_below="@+id/valoareProprieMatriceFisierTextView"
+        android:layout_alignLeft="@+id/valoareProprieMatriceFisierTextView"
+        android:layout_alignStart="@+id/valoareProprieMatriceFisierTextView" />
+
+</RelativeLayout>
