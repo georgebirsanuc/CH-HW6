@@ -20,19 +20,23 @@ public class Main {
 	}
 
 	public static void pb1() throws IOException {
-//		initMatriceFisier("m_rar_sim_2017.txt", Afisier, false);
-//		if (isMatriceaSimetrica(Afisier)) {
-//			System.out.println("Matricea este simetrica!");
-//		} else {
-//			System.out.println("Matricea nu este simetrica!");
-//		}
-//		aplicaMetodaPuterii(Afisier);
-		
+		initMatriceFisier("m_rar_sim_2017.txt", Afisier, false);
+		System.out.println(Afisier.getInceputLinii()[0]);
+		System.out.println(Afisier.getInceputLinii()[1]);
+		System.out.println(Afisier.getInceputLinii()[2]);
+		System.out.println(Afisier.getInceputLinii()[3]);
+		// if (isMatriceaSimetrica(Afisier)) {
+		// System.out.println("Matricea este simetrica!");
+		// } else {
+		// System.out.println("Matricea NU este simetrica!");
+		// }
+		// aplicaMetodaPuterii(Afisier);
+
 		initMatriceRandom(Arandom);
 		if (isMatriceaSimetrica(Arandom)) {
 			System.out.println("Matricea este simetrica!");
 		} else {
-			System.out.println("Matricea nu este simetrica!");
+			System.out.println("Matricea NU este simetrica!");
 		}
 		aplicaMetodaPuterii(Arandom);
 	}
@@ -61,8 +65,7 @@ public class Main {
 
 		while (liniaCurenta < n) {
 
-			for (int i = inceputLinii[liniaCurenta]; (liniaCurenta < n)
-					&& i < inceputLinii[liniaCurenta + 1] - 1; i++) {
+			for (int i = inceputLinii[liniaCurenta]; i < inceputLinii[liniaCurenta + 1] - 1; i++) {
 
 				coloanaGasita = false;
 				valoareGasita = false;
@@ -99,7 +102,6 @@ public class Main {
 		}
 
 		return true;
-
 	}
 
 	public static double[][] inmultireMatriciClasice(double a[][], double b[][]) {
@@ -375,7 +377,7 @@ public class Main {
 
 		int n;
 		int maxNenuleLinie = -1;
-		List<ElementMatrice> elemente = new ArrayList<ElementMatrice>();
+		List<ElementMatrice> elemente = new ArrayList<>();
 		int[] inceputLinii;
 		int[] col;
 		double[] val;
@@ -384,13 +386,11 @@ public class Main {
 		double[] d;
 		String line;
 
+		@SuppressWarnings("resource")
 		BufferedReader bf = new BufferedReader(new FileReader(new File("m_rar_sim_2017.txt")));
 
-		elemente = new ArrayList<ElementMatrice>();
-
 		n = Integer.parseInt(bf.readLine());
-
-		bf.readLine(); // empty line
+		bf.readLine();
 
 		b = new double[n];
 		x = new double[n];
@@ -414,17 +414,16 @@ public class Main {
 				System.out.println("Elementele din fisier nu sunt nenule. EXIT");
 				return;
 			}
-
 		}
 
+		bf.close();
 		val = new double[elemente.size() + n + 1];
 		col = new int[elemente.size() + n + 1];
 
 		Collections.sort(elemente);
 
 		int y = 0;
-
-		while (y < elemente.size()) { // elementele cu acelasi linie si coloana
+		while (y < elemente.size()) { // elementele cu aceiasi linie si coloana
 										// sunt adunate
 			int q = y + 1;
 			while ((q < elemente.size()) && (elemente.get(y).getLinie() == elemente.get(q).getLinie())) {
@@ -433,14 +432,12 @@ public class Main {
 					elemente.remove(q);
 					q--;
 				}
-
 				q++;
 			}
 			y++;
 		}
 
 		int ultimaLinieParcursa = -1;
-
 		int indexLinie = 0;
 		val[0] = 0;
 		col[0] = -1;
@@ -475,9 +472,7 @@ public class Main {
 							maxNenuleLinie = numarElementeNenuleLiniaCurenta;
 						}
 					}
-
 					indexLinie++;
-
 				}
 				ultimaLinieParcursa = elementCurent.linie;
 			}
@@ -486,7 +481,6 @@ public class Main {
 			col[f] = elementCurent.getColoana() + 1;
 
 			if (i == (elemente.size() - 1) && (f < elemente.size() + n - 1)) {
-
 				for (int u = f + 1; u < elemente.size() + n + 1; u++) {
 					inceputLinii[indexLinie] = u + 1;
 					indexLinie++;
@@ -494,7 +488,6 @@ public class Main {
 				}
 				indexLinie--;
 			}
-
 		}
 
 		inceputLinii[indexLinie] = ultimIndex;
@@ -507,8 +500,6 @@ public class Main {
 		A.setD(d);
 		A.setCol(col);
 		A.setVal(val);
-
-		bf.close();
 	}
 
 	public static double[][] getMatriceTranspusa(double[][] m) {
